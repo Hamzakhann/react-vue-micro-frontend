@@ -14,7 +14,10 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [16.16.0]
     steps:
       - uses: actions/checkout@v2
       - run: npm install --legacy-peer-deps
