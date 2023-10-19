@@ -20,6 +20,9 @@ jobs:
         node-version: [16.x]
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }} # Use the specified Node.js version
       - run: npm install --legacy-peer-deps
       - run: npm run build
 
